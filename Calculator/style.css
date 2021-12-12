@@ -1,0 +1,9 @@
+#operatorContainer button:nth-child(-n + 4) {
+  background-color: grey;
+}
+
+#operatorContainer button:nth-child(4n + 0),
+#operatorContainer button:last-child {
+  background-color: orange;
+  color: white;
+}
