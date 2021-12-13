@@ -1,11 +1,9 @@
 let numbers = [];
 let operations = [];
 let isPositive = true;
-let isOperation = false;
 let currentNumber = '0';
 
 function init() {
-
     const calculatorButtons = ["AC", "±", "%", "÷", "7", "8", "9", "x", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="];
 
     calculatorButtons.forEach(value => {
@@ -30,46 +28,43 @@ function init() {
 const operationHandler = (value) => {
     const typeOfOperation = ["÷", "x", "-", "+", "="];
 
-    if (value === "AC") {
-        reset();
-        updateResult(currentNumber);
-        return;
-    }
-
-    if (value === "%" && currentNumber !== "0") {
-        currentNumber /= 100;
-        currentNumber = currentNumber.toString();
-        updateResult(currentNumber);
-        return;
-    }
-
-    if (value === "±") {
-        if ((currentNumber.includes(value) === false) && (currentNumber !== "0")) {
-            isPositive != isPositive;
-            isPositive && currentNumber[0] === "-" ? currentNumber = currentNumber.substring(1, currentNumber.length) : currentNumber = '-' + currentNumber;
+    switch (value) {
+        case "AC":
+            reset();
             updateResult(currentNumber);
-        }
-        return;
-    }
+            break;
 
-    if (value === ".") {
-        if (currentNumber.includes(value) === false) {
-            currentNumber += value;
+        case "%":
+            currentNumber /= 100;
+            currentNumber = currentNumber.toString();
             updateResult(currentNumber);
-        }
-        return;
-    }
+            break;
 
-    if (typeOfOperation.includes(value)) { // !number
-        calculate(value);
-    } else { //? number
-        currentNumber === "0" ? currentNumber = value : currentNumber += value;
-        updateResult(currentNumber);
-    }
+        case "±":
+            if ((currentNumber.includes(value) === false) && (currentNumber !== "0")) {
+                isPositive != isPositive;
+                isPositive && currentNumber[0] === "-" ? currentNumber = currentNumber.substring(1, currentNumber.length) : currentNumber = '-' + currentNumber;
+                updateResult(currentNumber);
+            }
+            break;
+        case ".":
+            if (currentNumber.includes(value) === false) {
+                currentNumber += value;
+                updateResult(currentNumber);
+            }
+            break;
 
+        default:
+            if (typeOfOperation.includes(value)) { // !number
+                calculate(value === "x" ? "*" : value === "÷" ? "/" : value);
+            } else { //? number
+                currentNumber === "0" ? currentNumber = value : currentNumber += value;
+                updateResult(currentNumber);
+            }
+            break;
+    }
 }
 
-// TODO: define a calculator function
 function calculate(operate) {
     let total = "";
 
