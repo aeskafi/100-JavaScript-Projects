@@ -1,28 +1,5 @@
-// const { resolve } = require('path'),
-//     { readdir } = require('fs').promises;
-
-// async function getFiles(dir) {
-//     const dirents = await readdir(dir, { withFileTypes: true });
-//     const files = await Promise.all(dirents.map((dirent) => {
-//         const res = resolve(dir, dirent.name);
-//         // return dirent.isDirectory() ? getFiles(res) : res;
-//         return res;
-//     }));
-//     return Array.prototype.concat(...files);
-// }
-
-// const directory = "./";
-
-// getFiles(directory).then(results => {
-//     const html = `<ul>` +
-//         results.map(fileOrDirectory => `<li>${fileOrDirectory}</li>`).join('\n') +
-//         `</ul>`;
-
-//     process.stdout.write(html);
-//     // or you could use something like fs.writeFile to write the file directly
-// });
 var ignoreList = ['.git'];
-var html = ``;
+var repoTitle = '100 JavaScript Projects';
 
 var fs = require("fs"),
     path = require("path");
@@ -67,6 +44,5 @@ process.stdout.write(`
 </head>
 
 <body class="flex flex-1 bg-slate-300 min-h-screen align-center justify-center">
-    <section class="flex-1 bg-white rounded shadow-2xl max-h-full mx-3 my-3">`);
-
-// process.stdout.write(html);
+    <section class="flex-1 bg-white rounded shadow-2xl max-h-full mx-3 my-3">
+    <h1 class="text-3xl drop-shadow-md text-center py-2 border-b-4 border-gray-500">${repoTitle}</h1>`);
