@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Word Count</title>
+</head>
+
+<body class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12 font-mono">
+    <!--    -->
+    <div
+        class="relative m-10  px-1 py-1 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-1 max-h-fit">
+        <div class="flex p-6 items-center justify-center drop-shadow-xl">
+            <textarea id="text" rows="5" cols="80" placeholder="Enter everything you want ;)"
+                class="bg-zinc-100 min-w-150 max-w-[100%] p-1 text-md leadin-6 rounded-lg">
+            </textarea>
+        </div>
+        <button id="pushIt"
+            class="h-10 px-3 font-semibold rounded-md bg-red-500 hover:bg-amber-700 text-white flex ml-auto mr-6 items-center">Don't
+            push</button>
+        <div id="result" class="flex flex-col px-6 mb-6">
+            <h1 id="chars" class="text-md font-semibold mt-1">Characters: 0</h1>
+            <h1 id="words" class="text-md font-semibold mt-1">Words: 0</h1>
+            <h1 id="sentences" class="text-md font-semibold mt-1">Sentences: 0</h1>
+            <h1 id="paragraphs" class="text-md font-semibold mt-1">Paragraphs: 0</h1>
+            <h1 id="byteSize" class="text-md font-semibold mt-1">Size: 0 (Byte)</h1>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
