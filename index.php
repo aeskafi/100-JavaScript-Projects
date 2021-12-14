@@ -145,7 +145,6 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
     </style>
 
     <script type="text/javascript">
-        <!--
         var _c1 = '#fefefe';
         var _c2 = '#fafafa';
         var _ppg = 25;
@@ -322,7 +321,6 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
             _head();
             _srt('name');
         };
-        -->
     </script>
 </head>
 
