@@ -5,7 +5,7 @@ const init = () => {
     buttons.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
             var counter = number.innerText;
-            console.log(e.target.innerText);
+            if (e.target.innerText === 'Reset!') counter = 0;
             if (e.target.innerText === '+') {
                 counter++;
             } else { counter--; }
