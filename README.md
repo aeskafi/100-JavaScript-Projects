@@ -7,3 +7,4 @@ Small to medium size JavaScript project
   - Calculator
   - Counter
   - Word Counter (Characters, Words, Sentences, Paragraphs, Size in Bytes)
+  - Temperature Converter (Celsius, Fahrenheit, Kelvin)
