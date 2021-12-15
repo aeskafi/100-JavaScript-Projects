@@ -1,9 +1,7 @@
-const exactDate = new Date('Dec 15, 2021 19:28:33').getTime();
+const exactDate = new Date('Sep 5, 2023 00:00:00').getTime(); // My birthday time :D
 
 var countDown = setInterval(() => {
     var distanceBetween = exactDate - new Date().getTime();
-    // console.log(distanceBetween);
-    // console.log(Math.floor(distanceBetween % 60000) / 1000);
 
     var second = Math.floor((distanceBetween % (1000 * 60)) / 1000);
     var minutes = Math.floor((distanceBetween % (1000 * 60 * 60)) / (60 * 1000));
