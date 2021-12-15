@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen bg-slate-800 flex flex-col justify-center items-center relative overflow-hidden font-mono">
+
+    <div class="wrapper">
+        <!-- <div class="rotate-45 label not-fun">Freezing :/</div> -->
+        <div class="-rotate-90 slidershell" id="slidershell1">
+            <div class="slidertrack" id="slidertrack1"></div>
+            <div class="sliderfill" id="sliderfill1"></div>
+
+            <div class="sliderthumb" id="sliderthumb1"></div>
+
+            <input class="slider" id="slider1" type="range" min="0" max="300" value="0" oninput="showValue(value,1);"
+                onchange="showValue(value,1);" />
+        </div>
+        <!-- <div class="rotate-45 label fun">So HOT!</div> -->
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur id="blur" in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -9.5"
+                    result="goo" />
+            </filter>
+        </defs>
+    </svg>
+    <div class="flex align-center items-center">
+        <h1 id="c" class="flex text-white m-5 text-xl">0 °C</h1>
+        <h1 id="f" class="flex text-white m-5 text-xl">0 °F</h1>
+        <h1 id="k" class="flex text-white m-5 text-xl">0 K</h1>
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>

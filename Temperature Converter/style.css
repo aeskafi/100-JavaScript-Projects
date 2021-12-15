@@ -1,0 +1,130 @@
+body {
+  height: 100vh;
+  display: flex;
+  background: #225378;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Montserrat";
+}
+.wrapper {
+  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+  margin-top: 0px;
+}
+.slider,
+.slidervertical {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+  z-index: 100;
+}
+/* slidershell exists only
+ to provide a positioning context for the range input and other elements.*/
+.label {
+  vertical-align: middle;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.label.fun {
+  color: #eb7f00;
+}
+.label.not-fun {
+  color: #acf0f2;
+}
+.slidershell {
+  margin: 0 20px;
+  vertical-align: middle;
+  display: inline-block;
+  border: 0 none;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+  filter: url(#goo);
+}
+/* .slidertrack is the visible track on which the user drags the thumb button. */
+.slidertrack {
+  border-radius: 4px;
+  position: absolute;
+  background: #61c2ca;
+}
+/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
+ drags the thumb. */
+.sliderfill {
+  position: absolute;
+  pointer-events: none;
+  background: #eb7f00;
+  border-radius: 4px;
+}
+/* .sliderthumb can be any css you like including an image. 
+ The dimensions must match those found in the rule for 
+ input[type=range]::-webkit-slider-thumb. */
+.sliderthumb {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: white;
+  border-radius: 50%;
+  background-position: 0px 0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: 0 none;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  pointer-events: none;
+}
+/* .slidervalue can be styled as you see fit */
+input[type="range"] {
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+/* Make the thumbs the same size as your custom sliderthumb. 
+ they will not be visible but they will be draggable.    */
+input[type="range"]::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+svg {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media (max-width: 610px) {
+  .label {
+    display: none;
+  }
+  .slidershell {
+    margin: 0;
+  }
+}
+.sadface {
+  background: #fefefe;
+  text-align: center;
+  padding: 16px;
+  text-transform: uppercase;
+  color: #94a9b9;
+}
