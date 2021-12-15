@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <title>Countdown Timer</title>
+</head>
+
+
+<body class="font-mono">
+    <div class="min-h-screen flex justify-center items-center bg-gradient-to-br from-slate-400 to-slate-800">
+
+        <!-- flip clock container -->
+        <div
+            class="relative border-8 border-cyan-600 rounded shadow-2xl font-mono text-9xl text-white grid grid-cols-4 gap-x-px">
+
+            <!-- stand -->
+            <div class="absolute inset-x-0 -bottom-5 mx-auto flex justify-between drop-shadow-xl">
+                <div class="w-1/6 bg-cyan-600 h-5 rounded"></div>
+                <div class="w-1/6 bg-cyan-600 h-5 rounded"></div>
+            </div>
+
+            <!-- hour side -->
+            <div class="relative bg-black p-8">
+                <!-- background grid of black squares -->
+                <div class="absolute inset-0 grid grid-rows-2">
+                    <div class="bg-gradient-to-br from-gray-800 to-black"></div>
+                    <div class="bg-gradient-to-br from-gray-700 to-black"></div>
+                </div>
+
+                <!-- time numbers -->
+                <span id="day" class="relative">00</span>
+
+                <!-- line across the middle -->
+                <div class="absolute inset-0 flex items-center">
+                    <div class="h-px w-full bg-black"></div>
+                </div>
+            </div>
+
+            <!-- hour side -->
+            <div class="relative bg-black p-8">
+                <!-- background grid of black squares -->
+                <div class="absolute inset-0 grid grid-rows-2">
+                    <div class="bg-gradient-to-br from-gray-800 to-black"></div>
+                    <div class="bg-gradient-to-br from-gray-700 to-black"></div>
+                </div>
+
+                <!-- time numbers -->
+                <span id="hour" class="relative">00</span>
+
+                <!-- line across the middle -->
+                <div class="absolute inset-0 flex items-center">
+                    <div class="h-px w-full bg-black"></div>
+                </div>
+            </div>
+
+            <!-- minutes side -->
+            <div class="relative bg-black p-8">
+                <!-- background grid of black squares -->
+                <div class="absolute inset-0 grid grid-rows-2">
+                    <div class="bg-gradient-to-br from-gray-800 to-black"></div>
+                    <div class="bg-gradient-to-br from-gray-700 to-black"></div>
+                </div>
+
+                <span id="minutes" class="relative">00</span>
+
+                <!-- line across the middle -->
+                <div class="absolute inset-0 flex items-center">
+                    <div class="h-px w-full bg-black"></div>
+                </div>
+            </div>
+
+            <!-- second side -->
+            <div class="relative bg-black p-8">
+                <!-- background grid of black squares -->
+                <div class="absolute inset-0 grid grid-rows-2">
+                    <div class="bg-gradient-to-br from-gray-800 to-black"></div>
+                    <div class="bg-gradient-to-br from-gray-700 to-black"></div>
+                </div>
+
+                <span id="second" class="relative">00</span>
+
+                <!-- line across the middle -->
+                <div class="absolute inset-0 flex items-center">
+                    <div class="h-px w-full bg-black"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
