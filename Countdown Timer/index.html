@@ -15,15 +15,15 @@
 
         <!-- flip clock container -->
         <div
-            class="relative border-8 border-cyan-600 rounded shadow-2xl font-mono text-9xl text-white grid grid-cols-4 gap-x-px">
+            class="relative border-8 border-cyan-600 rounded shadow-2xl font-mono text-9xl text-white grid grid-cols-4 gap-x-px sm:max-w-screen-sm">
 
             <!-- stand -->
-            <div class="absolute inset-x-0 -bottom-5 mx-auto flex justify-between drop-shadow-xl">
+            <div class="absolute inset-x-0 -bottom-5 mx-auto flex justify-between drop-shadow-xl sm:max-w-50">
                 <div class="w-1/6 bg-cyan-600 h-5 rounded"></div>
                 <div class="w-1/6 bg-cyan-600 h-5 rounded"></div>
             </div>
 
-            <!-- hour side -->
+            <!-- day side -->
             <div class="relative bg-black p-8">
                 <!-- background grid of black squares -->
                 <div class="absolute inset-0 grid grid-rows-2">
@@ -32,7 +32,7 @@
                 </div>
 
                 <!-- time numbers -->
-                <span id="day" class="relative">00</span>
+                <span id="day" class="flex relative mx-auto justify-center text-5xl sm:text-3xl">00</span>
 
                 <!-- line across the middle -->
                 <div class="absolute inset-0 flex items-center">
@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- time numbers -->
-                <span id="hour" class="relative">00</span>
+                <span id="hour" class="flex relative mx-auto justify-center text-5xl sm:text-3xl">00</span>
 
                 <!-- line across the middle -->
                 <div class="absolute inset-0 flex items-center">
@@ -65,7 +65,7 @@
                     <div class="bg-gradient-to-br from-gray-700 to-black"></div>
                 </div>
 
-                <span id="minutes" class="relative">00</span>
+                <span id="minutes" class="flex relative mx-auto justify-center text-5xl sm:text-3xl">00</span>
 
                 <!-- line across the middle -->
                 <div class="absolute inset-0 flex items-center">
@@ -81,7 +81,7 @@
                     <div class="bg-gradient-to-br from-gray-700 to-black"></div>
                 </div>
 
-                <span id="second" class="relative">00</span>
+                <span id="second" class="flex relative mx-auto justify-center text-5xl sm:text-3xl">00</span>
 
                 <!-- line across the middle -->
                 <div class="absolute inset-0 flex items-center">
