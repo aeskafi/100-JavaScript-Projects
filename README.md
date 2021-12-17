@@ -9,3 +9,4 @@ Small to medium size JavaScript project
   - Word Counter (Characters, Words, Sentences, Paragraphs, Size in Bytes)
   - Temperature Converter (Celsius, Fahrenheit, Kelvin)
   - CountDown Timer to Exact Date
+  - Percentage Calculator
