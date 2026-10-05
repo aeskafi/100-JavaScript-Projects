@@ -6,48 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Percentage Calculator</title>
+    <title>Percentage Calculator | 100 JavaScript Projects</title>
 </head>
 
-<body>
-    <div class="min-h-screen bg-gray-50 py-6 flex items-center justify-center relative overflow-hidden sm:py-12">
-        <div class="relative p-6 max-h-96 bg-white ring-1 ring-gray-900/5 shadow-xl font-mono sm:mx-auto sm:rounded-lg">
-            <h1 class="text-2xl">Percentage Calculator</h1>
-            <p>Percentage Calculator is a free online tool to calculate percentages.</p>
-            <section class="flex items-center my-2">
-                <h1 class="flex mr-3">What is</h1>
-                <input id="x_1" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">% of</h1>
-                <input id="y_1" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">?</h1>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+
+        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">Percentage Calculator</h1>
+        <p class="text-sm text-slate-400 mb-8">Fast, lightweight utilities for common percentage operations.</p>
+
+        <!-- Calculation 1: What is X% of Y? -->
+        <div class="bg-slate-900/80 border border-slate-700/80 rounded-2xl p-4 sm:p-5 mb-5 shadow-sm">
+            <span class="text-xs uppercase font-semibold text-cyan-400 tracking-wider">Formula 1</span>
+            <div class="flex flex-wrap items-center gap-2 mt-2">
+                <span class="text-slate-300 font-medium">What is</span>
+                <input id="x_1" type="number" step="any" placeholder="X"
+                    class="w-20 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                <span class="text-slate-300 font-medium">% of</span>
+                <input id="y_1" type="number" step="any" placeholder="Y"
+                    class="w-24 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                <span class="text-slate-300 font-medium">?</span>
                 <button id="c_1"
-                    class="h-10 px-3 font-semibold bg-emerald-500 hover:bg-emerald-700 text-white">Calculate</button>
-                <span id="z_1" class="inp bg-zinc-100 h-10 text-center text-xl border-2"></span>
-            </section>
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-xl transition shadow active:scale-95 text-sm ml-auto sm:ml-2">
+                    Calculate
+                </button>
+            </div>
+            <div class="mt-3 flex items-center gap-2">
+                <span class="text-xs text-slate-400 font-mono">Result:</span>
+                <span id="z_1" class="font-mono font-bold text-emerald-400 text-lg">---</span>
+            </div>
+        </div>
 
-            <section class="flex items-center my-2">
-                <input id="x_2" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">is what percent of</h1>
-                <input id="y_2" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">?</h1>
+        <!-- Calculation 2: X is what % of Y? -->
+        <div class="bg-slate-900/80 border border-slate-700/80 rounded-2xl p-4 sm:p-5 mb-5 shadow-sm">
+            <span class="text-xs uppercase font-semibold text-cyan-400 tracking-wider">Formula 2</span>
+            <div class="flex flex-wrap items-center gap-2 mt-2">
+                <input id="x_2" type="number" step="any" placeholder="X"
+                    class="w-20 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                <span class="text-slate-300 font-medium">is what percent of</span>
+                <input id="y_2" type="number" step="any" placeholder="Y"
+                    class="w-24 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                <span class="text-slate-300 font-medium">?</span>
                 <button id="c_2"
-                    class="h-10 px-3 font-semibold bg-emerald-500 hover:bg-emerald-700 text-white">Calculate</button>
-                <span id="z_2" class="inp bg-zinc-100 h-10 text-center text-xl border-2"></span>
-                <h1 class="flex mx-3">%</h1>
-            </section>
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-xl transition shadow active:scale-95 text-sm ml-auto sm:ml-2">
+                    Calculate
+                </button>
+            </div>
+            <div class="mt-3 flex items-center gap-2">
+                <span class="text-xs text-slate-400 font-mono">Result:</span>
+                <span id="z_2" class="font-mono font-bold text-emerald-400 text-lg">---</span>
+            </div>
+        </div>
 
-            <section class="flex items-center my-2">
-                <h1 class="flex mr-3 mx-auto w-auto">What is the percentage increase/decrease from</h1>
-                <input id="x_3" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">to</h1>
-                <input id="y_3" class="bg-zinc-100 p-1 w-20 text-center text-xl border-2" />
-                <h1 class="flex mx-3">?</h1>
+        <!-- Calculation 3: % increase / decrease from X to Y -->
+        <div class="bg-slate-900/80 border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-sm">
+            <span class="text-xs uppercase font-semibold text-cyan-400 tracking-wider">Formula 3</span>
+            <p class="text-xs text-slate-400 mt-1 mb-2">Percentage increase / decrease:</p>
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="text-slate-300 font-medium">From</span>
+                <input id="x_3" type="number" step="any" placeholder="From"
+                    class="w-24 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                <span class="text-slate-300 font-medium">to</span>
+                <input id="y_3" type="number" step="any" placeholder="To"
+                    class="w-24 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
                 <button id="c_3"
-                    class="h-10 px-3 font-semibold bg-emerald-500 hover:bg-emerald-700 text-white">Calculate</button>
-                <span id="z_3" class="inp bg-zinc-100 h-10 text-center text-xl border-2"></span>
-                <h1 class="flex mx-3">% of</h1>
-            </section>
-
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-xl transition shadow active:scale-95 text-sm ml-auto sm:ml-2">
+                    Calculate
+                </button>
+            </div>
+            <div class="mt-3 flex items-center gap-2">
+                <span class="text-xs text-slate-400 font-mono">Result:</span>
+                <span id="z_3" class="font-mono font-bold text-emerald-400 text-lg">---</span>
+            </div>
         </div>
     </div>
 </body>

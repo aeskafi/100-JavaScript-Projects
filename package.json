@@ -1,0 +1,20 @@
+{
+  "name": "100-javascript-projects",
+  "version": "1.0.0",
+  "description": "Curated collection of vanilla JavaScript and Tailwind CSS interactive micro-applications.",
+  "scripts": {
+    "start": "npx serve .",
+    "generate": "node folder-generator.js > index.html",
+    "test": "node -c folder-generator.js 'Age in days/script.js' Calculator/script.js 'Countdown Timer/script.js' Counter/script.js 'Percentage Calculator/script.js' 'Temperature Converter/script.js' 'Word Count/script.js'"
+  },
+  "keywords": [
+    "javascript",
+    "vanilla-js",
+    "tailwindcss",
+    "micro-apps",
+    "projects",
+    "web-development"
+  ],
+  "author": "Arham Eskafi <https://arham.dev>",
+  "license": "MIT"
+}

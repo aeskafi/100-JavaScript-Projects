@@ -1,96 +1,199 @@
-let numbers = [];
-let operations = [];
-let isPositive = true;
-let currentNumber = '0';
+let currentOperand = '0';
+let previousOperand = '';
+let operation = undefined;
+let shouldResetScreen = false;
+
+const buttons = [
+    { label: 'AC', type: 'fn' },
+    { label: '±', type: 'fn' },
+    { label: '%', type: 'fn' },
+    { label: '÷', type: 'op' },
+    { label: '7', type: 'num' },
+    { label: '8', type: 'num' },
+    { label: '9', type: 'num' },
+    { label: '×', type: 'op' },
+    { label: '4', type: 'num' },
+    { label: '5', type: 'num' },
+    { label: '6', type: 'num' },
+    { label: '-', type: 'op' },
+    { label: '1', type: 'num' },
+    { label: '2', type: 'num' },
+    { label: '3', type: 'num' },
+    { label: '+', type: 'op' },
+    { label: '0', type: 'num', span: 2 },
+    { label: '.', type: 'num' },
+    { label: '=', type: 'op' }
+];
 
 function init() {
-    const calculatorButtons = ["AC", "±", "%", "÷", "7", "8", "9", "x", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="];
+    const container = document.getElementById('operatorContainer');
+    container.innerHTML = '';
 
-    calculatorButtons.forEach(value => {
-        var btn = document.createElement('button');
-
-        // zero button need to be wider than another buttons
-        if (value === "0") btn.style.gridColumn = 'span 2';
-
-        var btnCaption = document.createTextNode(value);
-        btn.appendChild(btnCaption);
-        btn.className = "text-white text-4xl border-white border-2 bg-slate-500";
-
-        document.getElementById("operatorContainer").appendChild(btn);
+    buttons.forEach((btnData) => {
+        const btn = document.createElement('button');
+        btn.innerText = btnData.label;
+        btn.className = `calc-btn calc-btn-${btnData.type}`;
+        if (btnData.span === 2) {
+            btn.style.gridColumn = 'span 2';
+        }
+        btn.addEventListener('click', () => handleInput(btnData.label));
+        container.appendChild(btn);
     });
 
-    Array.from(document.getElementsByTagName('button')).forEach(btn => {
-        btn.addEventListener('click', (e) => operationHandler(e.target.innerText))
-    })
-
+    window.addEventListener('keydown', handleKeyboard);
+    updateDisplay();
 }
 
-const operationHandler = (value) => {
-    const typeOfOperation = ["÷", "x", "-", "+", "="];
+function handleInput(val) {
+    if (!isNaN(val)) {
+        appendNumber(val);
+    } else if (val === '.') {
+        appendDecimal();
+    } else if (val === 'AC') {
+        clearAll();
+    } else if (val === '±') {
+        toggleSign();
+    } else if (val === '%') {
+        percentage();
+    } else if (val === '=') {
+        compute();
+    } else if (['+', '-', '×', '÷', '*', '/'].includes(val)) {
+        const normalized = val === '*' ? '×' : val === '/' ? '÷' : val;
+        chooseOperation(normalized);
+    }
+}
 
-    switch (value) {
-        case "AC":
-            reset();
-            updateResult(currentNumber);
+function appendNumber(num) {
+    if (currentOperand === '0' || shouldResetScreen) {
+        currentOperand = num;
+        shouldResetScreen = false;
+    } else {
+        currentOperand += num;
+    }
+    updateDisplay();
+}
+
+function appendDecimal() {
+    if (shouldResetScreen) {
+        currentOperand = '0.';
+        shouldResetScreen = false;
+        updateDisplay();
+        return;
+    }
+    if (!currentOperand.includes('.')) {
+        currentOperand += '.';
+        updateDisplay();
+    }
+}
+
+function clearAll() {
+    currentOperand = '0';
+    previousOperand = '';
+    operation = undefined;
+    shouldResetScreen = false;
+    updateDisplay();
+}
+
+function toggleSign() {
+    if (currentOperand === '0') return;
+    if (currentOperand.startsWith('-')) {
+        currentOperand = currentOperand.substring(1);
+    } else {
+        currentOperand = '-' + currentOperand;
+    }
+    updateDisplay();
+}
+
+function percentage() {
+    const num = parseFloat(currentOperand);
+    if (!isNaN(num)) {
+        currentOperand = (num / 100).toString();
+        updateDisplay();
+    }
+}
+
+function chooseOperation(op) {
+    if (operation !== undefined) {
+        compute();
+    }
+    previousOperand = currentOperand;
+    operation = op;
+    shouldResetScreen = true;
+    updateDisplay();
+}
+
+function compute() {
+    if (operation === undefined || shouldResetScreen) return;
+    const prev = parseFloat(previousOperand);
+    const curr = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(curr)) return;
+
+    let result = 0;
+    switch (operation) {
+        case '+':
+            result = prev + curr;
             break;
-
-        case "%":
-            currentNumber /= 100;
-            currentNumber = currentNumber.toString();
-            updateResult(currentNumber);
+        case '-':
+            result = prev - curr;
             break;
-
-        case "±":
-            if ((currentNumber.includes(value) === false) && (currentNumber !== "0")) {
-                isPositive != isPositive;
-                isPositive && currentNumber[0] === "-" ? currentNumber = currentNumber.substring(1, currentNumber.length) : currentNumber = '-' + currentNumber;
-                updateResult(currentNumber);
+        case '×':
+            result = prev * curr;
+            break;
+        case '÷':
+            if (curr === 0) {
+                currentOperand = 'Error';
+                operation = undefined;
+                previousOperand = '';
+                shouldResetScreen = true;
+                updateDisplay();
+                return;
             }
+            result = prev / curr;
             break;
-        case ".":
-            if (currentNumber.includes(value) === false) {
-                currentNumber += value;
-                updateResult(currentNumber);
-            }
-            break;
-
         default:
-            if (typeOfOperation.includes(value)) { // !number
-                calculate(value === "x" ? "*" : value === "÷" ? "/" : value);
-            } else { //? number
-                currentNumber === "0" ? currentNumber = value : currentNumber += value;
-                updateResult(currentNumber);
-            }
-            break;
+            return;
+    }
+
+    currentOperand = Math.round(result * 100000000) / 100000000 + '';
+    operation = undefined;
+    previousOperand = '';
+    shouldResetScreen = true;
+    updateDisplay();
+}
+
+function updateDisplay() {
+    const resultEl = document.getElementById('result');
+    const equationEl = document.getElementById('equation');
+
+    resultEl.innerText = currentOperand;
+    if (operation != null) {
+        equationEl.innerText = `${previousOperand} ${operation}`;
+    } else {
+        equationEl.innerText = '';
     }
 }
 
-function calculate(operate) {
-    let total = "";
-
-    operations.push(operate === "=" ? " " : operate);
-    numbers.push(currentNumber);
-    updateResult(currentNumber);
-    currentNumber = "0";
-
-    numbers.map((value, index) => {
-        total += value + operations[index];
-    });
-
-    if (operate === "=") { //? operator === equal 
-        reset(eval(total).toString());
-        updateResult(currentNumber);
+function handleKeyboard(e) {
+    if (e.key >= '0' && e.key <= '9') handleInput(e.key);
+    if (e.key === '.') handleInput('.');
+    if (e.key === '=' || e.key === 'Enter') handleInput('=');
+    if (e.key === 'Backspace') {
+        if (currentOperand.length > 1 && !shouldResetScreen) {
+            currentOperand = currentOperand.slice(0, -1);
+        } else {
+            currentOperand = '0';
+        }
+        updateDisplay();
     }
-}
-
-function reset(value = '0') {
-    numbers = [];
-    operations = [];
-    currentNumber = value;
-}
-
-const updateResult = () => {
-    document.getElementById("result").innerText = currentNumber;
+    if (e.key === 'Escape' || e.key.toLowerCase() === 'c') handleInput('AC');
+    if (e.key === '+') handleInput('+');
+    if (e.key === '-') handleInput('-');
+    if (e.key === '*') handleInput('×');
+    if (e.key === '/') {
+        e.preventDefault();
+        handleInput('÷');
+    }
+    if (e.key === '%') handleInput('%');
 }
 
 window.addEventListener('DOMContentLoaded', init);

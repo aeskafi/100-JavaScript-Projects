@@ -6,25 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Word Count</title>
+    <title>Word & Text Analytics | 100 JavaScript Projects</title>
 </head>
 
-<body class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12 font-mono">
-    <div
-        class="relative m-10  px-1 py-1 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-1 max-h-fit">
-        <div class="flex p-6 items-center justify-center drop-shadow-xl">
-            <textarea id="text" rows="5" cols="80" placeholder="Enter everything you want ;)"
-                class="bg-zinc-100 min-w-150 max-w-[100%] p-1 text-md leadin-6 rounded-lg"></textarea>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-2xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-white">Word & Text Counter</h1>
+                <p class="text-sm text-slate-400">Live statistics, character breakdown, and estimated reading time.</p>
+            </div>
+            <button id="clearBtn"
+                class="self-start sm:self-auto px-4 py-1.5 text-xs font-semibold rounded-xl bg-slate-700 hover:bg-rose-600 text-slate-200 hover:text-white transition shadow active:scale-95">
+                Clear Text
+            </button>
         </div>
-        <button id="pushIt"
-            class="h-10 px-3 font-semibold rounded-md bg-red-500 hover:bg-amber-700 text-white flex ml-auto mr-6 items-center">Don't
-            push</button>
-        <div id="result" class="flex flex-col px-6 mb-6">
-            <h1 id="chars" class="text-md font-semibold mt-1">Characters: 0</h1>
-            <h1 id="words" class="text-md font-semibold mt-1">Words: 0</h1>
-            <h1 id="sentences" class="text-md font-semibold mt-1">Sentences: 0</h1>
-            <h1 id="paragraphs" class="text-md font-semibold mt-1">Paragraphs: 0</h1>
-            <h1 id="byteSize" class="text-md font-semibold mt-1">Size: 0 (Byte)</h1>
+
+        <div class="mb-6">
+            <textarea id="text" rows="7" placeholder="Type or paste your content here to analyze..."
+                class="w-full bg-slate-950 border border-slate-700 rounded-2xl p-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 font-mono text-sm resize-y transition"></textarea>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">Words</span>
+                <p id="words" class="text-2xl sm:text-3xl font-bold text-cyan-400 mt-1 font-mono">0</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">Characters</span>
+                <p id="chars" class="text-2xl sm:text-3xl font-bold text-cyan-400 mt-1 font-mono">0</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">Sentences</span>
+                <p id="sentences" class="text-2xl sm:text-3xl font-bold text-cyan-400 mt-1 font-mono">0</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">Paragraphs</span>
+                <p id="paragraphs" class="text-2xl sm:text-3xl font-bold text-emerald-400 mt-1 font-mono">0</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">Reading Time</span>
+                <p id="readingTime" class="text-2xl sm:text-3xl font-bold text-amber-400 mt-1 font-mono">0m</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4">
+                <span class="text-xs uppercase font-medium text-slate-400">UTF-8 Size</span>
+                <p id="byteSize" class="text-2xl sm:text-3xl font-bold text-purple-400 mt-1 font-mono">0 B</p>
+            </div>
         </div>
     </div>
 </body>

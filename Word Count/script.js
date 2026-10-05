@@ -1,53 +1,57 @@
+function getByteLength(str) {
+    return new Blob([str]).size;
+}
+
+function analyzeText() {
+    const text = document.getElementById('text').value;
+
+    const chars = text.length;
+
+    // Word count (splits by whitespace, filters out empty tokens)
+    const wordsArray = text.trim().match(/\S+/g);
+    const words = wordsArray ? wordsArray.length : 0;
+
+    // Sentence count (. ! ? followed by space or end of string)
+    const sentencesArray = text.match(/[^.!?]+[.!?]+(\s|$)/g);
+    const sentences = sentencesArray ? sentencesArray.length : (chars > 0 ? 1 : 0);
+
+    // Paragraph count (separated by double newlines or single non-empty newlines)
+    const paragraphsArray = text.split(/\n+/).map(p => p.trim()).filter(p => p.length > 0);
+    const paragraphs = paragraphsArray.length;
+
+    // Reading time: average 200 words per minute
+    const readingMinutes = Math.ceil(words / 200);
+    const readingTime = words === 0 ? '0m' : `${readingMinutes}m`;
+
+    // Byte size formatting
+    const bytes = getByteLength(text);
+    let byteFormatted = `${bytes} B`;
+    if (bytes >= 1024 * 1024) {
+        byteFormatted = `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+    } else if (bytes >= 1024) {
+        byteFormatted = `${(bytes / 1024).toFixed(2)} KB`;
+    }
+
+    document.getElementById('words').innerText = words.toLocaleString();
+    document.getElementById('chars').innerText = chars.toLocaleString();
+    document.getElementById('sentences').innerText = sentences.toLocaleString();
+    document.getElementById('paragraphs').innerText = paragraphs.toLocaleString();
+    document.getElementById('readingTime').innerText = readingTime;
+    document.getElementById('byteSize').innerText = byteFormatted;
+}
+
 function init() {
-    var text = document.getElementById('text');
-    var button = document.getElementById('pushIt');
-    text.addEventListener('keyup', counting, false);
-    button.addEventListener('click', () => { text.value = ""; reset() });
-    counting();
-}
+    const textarea = document.getElementById('text');
+    const clearBtn = document.getElementById('clearBtn');
 
-function byteLength(str) {
-    // returns the byte length of an utf8 string
-    var s = str.length;
-    for (var i = str.length - 1; i >= 0; i--) {
-        var code = str.charCodeAt(i);
-        if (code > 0x7f && code <= 0x7ff) s++;
-        else if (code > 0x7ff && code <= 0xffff) s += 2;
-        if (code >= 0xDC00 && code <= 0xDFFF) i--; //trail surrogate
-    }
-    return s;
-}
+    textarea.addEventListener('input', analyzeText);
+    clearBtn.addEventListener('click', () => {
+        textarea.value = '';
+        analyzeText();
+        textarea.focus();
+    });
 
-function counting(e) {
-    var chars, words, sentences, byteSize = "";
-    chars = text.value && text.value.length;
-    words = text.value.match(/(\w+)/g) !== null ? text.value.match(/(\w+)/g).length : 0;
-    sentences = text.value.match(/[\w|\)][.?!](\s|$)/g) !== null ? text.value.match(/[\w|\)][.?!](\s|$)/g).length : 0;
-
-    var g = text.value.split("\n\n").length;
-    paragraphs = 0;
-    var strip_whitespace = /\s+/gi;
-    while (g >= 0) {
-        g--;
-        var tmp = text.value.split("\n\n")[g];
-        tmp = tmp ? tmp.replace(strip_whitespace, "") : tmp;
-        if (tmp && tmp.length > 1) {
-            paragraphs++;
-        }
-    }
-
-    byteSize = text.value && byteLength(text.value);
-
-    reset(e, byteSize || 0, chars || 0, words, sentences, paragraphs);
-}
-
-function reset(e, byteSize = 0, chars = 0, words = 0, sentences = 0, paragraphs = 0) {
-    document.getElementById('chars').innerText = `Characters: ${chars}`;
-    document.getElementById('words').innerText = `Words: ${words}`;
-    document.getElementById('sentences').innerText = `Sentences: ${sentences}`;
-    document.getElementById('paragraphs').innerText = `Paragraphs: ${paragraphs}`;
-    document.getElementById('byteSize').innerText = `Size: ${byteSize} (Byte)`;
-    text.focus();
+    analyzeText();
 }
 
 window.addEventListener('DOMContentLoaded', init);
