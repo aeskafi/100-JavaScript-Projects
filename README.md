@@ -1,45 +1,47 @@
-# ⚡ 100 JavaScript Projects
+# ⚡ 100 JavaScript Projects (100 / 100 Complete)
 
-> High-performance, zero-dependency vanilla JavaScript and Tailwind CSS interactive micro-applications built for speed, clean UX, and rapid learning.
+> 100 high-performance, zero-dependency vanilla JavaScript and Tailwind CSS interactive micro-applications built for speed, clean UX, and rapid learning.
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![HTML5](https://img.shields.io/badge/HTML5-Modern-E34F26?style=flat-square&logo=html5&logoColor=white)](https://whatwg.org/)
+[![Projects: 100/100](https://img.shields.io/badge/Micro--Apps-100%20%2F%20100-emerald?style=flat-square)](index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
 
 ## 🚀 Overview
 
-A curated showcase of lightweight, modular micro-applications solving real-world utility problems with zero build steps or heavy framework overhead. Each project runs natively in modern browsers with instant response times and responsive design.
+A comprehensive collection of **100 self-contained, interactive micro-applications** built purely with modern ES6+ vanilla JavaScript and Tailwind CSS. Zero build steps, zero bulky runtime frameworks, zero dependencies — every single app runs instantly in any modern browser.
 
-### 🌟 Featured Micro-Apps
+### 🌟 Project Categories
 
-| Project | Category | Highlights |
+| Category | Apps Included | Highlights |
 | :--- | :--- | :--- |
-| **[📅 Age in Days](Age%20in%20days/index.html)** | Math & Time | Astronomical day-count calculator with validation and leap-year awareness. |
-| **[🧮 Modern Calculator](Calculator/index.html)** | Utility | Responsive dark-mode keypad, full keyboard bindings, and safe arithmetic evaluation. |
-| **[⏳ Countdown Timer](Countdown%20Timer/index.html)** | Math & Time | Live ticking countdown with custom date picker and dynamic target tracking. |
-| **[🔢 Interactive Counter](Counter/index.html)** | Utility | State-colored incrementor/decrementor with keyboard shortcut integration (`+`, `-`, `0`). |
-| **[📊 Percentage Suite](Percentage%20Calculator/index.html)** | Finance & Math | Complete three-way percentage solver handling ratios, fractions, and percentage change. |
-| **[🌡️ Temperature Converter](Temperature%20Converter/index.html)** | Converters | Real-time two-way synchronized conversion across Celsius, Fahrenheit, and Kelvin. |
-| **[✍️ Word & Text Analytics](Word%20Count/index.html)** | Text & Analysis | Live character, word, sentence, and paragraph counters with reading time and byte sizing. |
+| **🧮 Math & Finance** | `Tip Calculator`, `Loan Calculator`, `Compound Interest Calculator`, `Discount Calculator`, `Currency Converter`, `Matrix Determinant`, `Quadratic Equation Solver`, `Statistics Calculator`, `Prime Number Checker`, `Factorial and Permutations`, `Calculator`, `Percentage Calculator`, `Counter`, `Age in days` | Real-time financial modeling, linear algebra determinants, probability permutations, and amortization tables. |
+| **⏳ Time & Productivity** | `Pomodoro Timer`, `Stopwatch`, `Digital and Analog Clock`, `Countdown Timer`, `Todo List`, `Notes App`, `Kanban Board`, `Habit Tracker`, `Expense Tracker`, `Bookmark Manager`, `Flashcards App` | Interval focus timers, millisecond lap stopwatches, localStorage persistence, and drag/stage task tracking. |
+| **🔄 Converters** | `Temperature Converter`, `Unit Converter`, `Binary to Decimal Converter`, `Roman Numeral Converter`, `Morse Code Translator`, `Aspect Ratio Calculator` | Instant two-way conversions across metric/imperial lengths, temperature scales, numeral systems, and binary formats. |
+| **✍️ Text & Strings** | `Word Count`, `Markdown Previewer`, `Slug Generator`, `Case Converter`, `Password Generator`, `Lorem Ipsum Generator`, `Palindrome Checker`, `Emoji Picker and Search`, `Speed Reading Trainer`, `Typing Speed Test` | Live text metrics, RSVP speed reading trainer, live Markdown parser, entropy password generators, and regex tools. |
+| **🔐 Security & DevTools** | `Base64 Encoder Decoder`, `URL Encoder Decoder`, `JSON Formatter and Validator`, `ROT13 Cipher`, `Text Diff Checker`, `Regex Tester`, `String Obfuscator`, `Simple Form Validator` | Client-side security primitives, JSON beautification/validation, live regex testing, and line-by-line diffing. |
+| **🎵 Audio & Music** | `Drum Kit`, `Virtual Piano`, `Sound Board`, `Metronome`, `White Noise Generator`, `Audio Frequency Visualizer`, `Text to Speech` | Web Audio API synthesizer oscillators, electronic drum pads, 8-bit arcade SFX, ambient white noise, and speech synthesis. |
+| **🎨 CSS & Design Tools** | `Box Shadow Generator`, `Glassmorphism Generator`, `Border Radius Previewer`, `CSS Grid Generator`, `Flexbox Playground`, `Neumorphism Generator`, `Clip Path Maker`, `Color Contrast Checker`, `SVG Wave Generator`, `CSS Keyframe Animator` | Visual CSS generators with instant code export: backdrop filters, soft neumorphic shadows, clip polygons, and WCAG contrast check. |
+| **🖌️ Graphics & Canvas** | `Canvas Drawing Board`, `Color Palette Generator`, `Gradient Generator`, `QR Code Generator`, `ASCII Art Generator`, `Pixel Art Studio`, `Meme Generator`, `Particle Visualizer`, `Canvas Fireworks` | HTML5 Canvas sketchpads, vector QR generators, pixel art grids, kinetic particle gravity systems, and retro ASCII art. |
+| **🎮 Games & Puzzles** | `Tic Tac Toe`, `Rock Paper Scissors`, `Memory Card Match`, `Whack A Mole`, `Snake Game`, `Simon Says`, `Quiz App`, `Hangman`, `Connect Four`, `15 Puzzle`, `Tower of Hanoi`, `Minesweeper`, `Reaction Time Tester`, `2048 Game`, `Guess The Number`, `Coin Flip and Dice Roll`, `Typing Fall Game`, `Word Scramble` | 18 full arcade & puzzle classics: Snake, 2048, Minesweeper, Connect Four, Simon Says, Hanoi, and reaction testers. |
+| **🧬 Simulations** | `Conways Game of Life`, `Sorting Algorithm Visualizer`, `Fractal Tree Generator`, `Matrix Rain Effect` | Algorithmic step sorting (Bubble & Selection), procedural cellular automata, recursive fractal branches, and Matrix digital rain. |
 
 ---
 
-## ✨ Features
+## ✨ Engineering Standards
 
-- **⚡ Zero Build Overhead**: Pure client-side HTML5, modern ES6+ JavaScript, and utility Tailwind CSS.
-- **🎨 Modern Dark Theme**: Consistent aesthetic with responsive layouts across mobile, tablet, and desktop.
-- **⌨️ Keyboard First**: Keyboard navigation and shortcut controls baked into interactive apps.
-- **🛡️ Secure & Clean**: Zero external npm dependencies, zero eval vulnerabilities, clean DOM manipulation.
-- **🔍 Showcase Dashboard**: Central searchable hub to preview, filter, and launch any micro-app instantly.
+- **⚡ Instant Execution**: 100% client-side, zero build step required. Open `index.html` or any subproject and it runs immediately.
+- **🎨 Modern Dark Aesthetic**: Crafted with Tailwind CSS for consistent typography, responsive cards, and vibrant accents.
+- **⌨️ Keyboard Shortcuts**: Intuitive keyboard bindings across calculators, games, drum kits, and timers.
+- **🛡️ Secure & Clean**: Zero `eval()` security risks, sanitized inputs, and zero third-party script bloat.
+- **🔍 Global Search & Filter**: Searchable central hub to filter all 100 projects in real time.
 
 ---
 
 ## ⚡ Quickstart
-
-Get up and running locally in 3 steps:
 
 ### 1. Clone the repository
 ```bash
@@ -47,14 +49,13 @@ git clone https://github.com/aeskafi/100-JavaScript-Projects.git
 cd 100-JavaScript-Projects
 ```
 
-### 2. Install dependencies (Optional)
-This repository is zero-dependency! However, if you want a local static server:
+### 2. Verify all 100 projects
+Run the automated syntax test across all 100 micro-apps:
 ```bash
-# Optional: test JS syntax across all projects
 npm test
 ```
 
-### 3. Launch the showcase
+### 3. Launch the dashboard
 Open `index.html` directly in your browser, or start a local server:
 ```bash
 npx serve .
@@ -66,8 +67,8 @@ npx serve .
 
 Crafted with care by **Arham Eskafi**:
 - 🌐 Website: [arham.dev](https://arham.dev)
-- 💼 Rapid MVP Specialist & Tech Nomad
-- 🌍 Exploring the world and building software on the road — follow the journey on **[Walk Cook Live](https://youtube.com/@walkcooklive)**.
+- 💼 Rapid MVP Specialist & Full-Stack Architect
+- 🌍 Exploring the world, building software on the road — follow the journey on **[Walk Cook Live](https://youtube.com/@walkcooklive)**.
 
 ---
 

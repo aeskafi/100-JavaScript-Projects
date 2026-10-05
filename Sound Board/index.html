@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Bit Sound Effects Board | 100 JavaScript Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+        <div class="flex items-center justify-between mb-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                <span>🔊</span> 8-Bit Sound Effects Board
+            </h1>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-cyan-400 border border-slate-600">
+                Audio & Music
+            </span>
+        </div>
+        <p class="text-sm text-slate-400 mb-6">Generate retro arcade SFX: Coin pickup, laser shot, explosion, power-up, and jump.</p>
+        
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="coin">
+            <span class="text-2xl block mb-1">🪙</span>
+            <span class="text-xs font-bold text-white">Coin Pickup</span>
+        </button>
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="laser">
+            <span class="text-2xl block mb-1">🔫</span>
+            <span class="text-xs font-bold text-white">Laser Shot</span>
+        </button>
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="jump">
+            <span class="text-2xl block mb-1">🦘</span>
+            <span class="text-xs font-bold text-white">Jump</span>
+        </button>
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="powerup">
+            <span class="text-2xl block mb-1">🍄</span>
+            <span class="text-xs font-bold text-white">Power Up</span>
+        </button>
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="explode">
+            <span class="text-2xl block mb-1">💥</span>
+            <span class="text-xs font-bold text-white">Explosion</span>
+        </button>
+        <button class="sfx-btn p-4 bg-slate-950 hover:bg-cyan-600/30 border border-slate-700 rounded-xl text-center transition" data-sfx="victory">
+            <span class="text-2xl block mb-1">🏆</span>
+            <span class="text-xs font-bold text-white">Victory</span>
+        </button>
+    </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

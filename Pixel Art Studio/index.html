@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16x16 Pixel Art Studio | 100 JavaScript Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+        <div class="flex items-center justify-between mb-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                <span>👾</span> 16x16 Pixel Art Studio
+            </h1>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-cyan-400 border border-slate-600">
+                Canvas & Graphics
+            </span>
+        </div>
+        <p class="text-sm text-slate-400 mb-6">Paint retro 16x16 sprites with multi-color palette and eraser support.</p>
+        
+    <div class="space-y-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <input type="color" id="pixelColor" value="#10b981" class="w-8 h-8 rounded-lg bg-transparent cursor-pointer" />
+                <button id="pixelEraser" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs font-bold text-slate-300">Eraser</button>
+            </div>
+            <button id="pixelClear" class="px-3 py-1 bg-rose-600 hover:bg-rose-500 rounded-xl text-xs font-bold text-white">Reset Grid</button>
+        </div>
+        <div id="pixelGrid" class="grid grid-cols-16 gap-px bg-slate-950 p-2 border border-slate-700 rounded-2xl max-w-[280px] mx-auto"></div>
+    </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

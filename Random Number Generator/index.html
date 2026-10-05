@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator | 100 JavaScript Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+        <div class="flex items-center justify-between mb-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                <span>🎲</span> Random Number Generator
+            </h1>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-cyan-400 border border-slate-600">
+                Math & Science
+            </span>
+        </div>
+        <p class="text-sm text-slate-400 mb-6">Generate cryptographically strong random numbers, pick ranges, and roll dice.</p>
+        
+    <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-3">
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Min Value</label>
+                <input type="number" id="minVal" value="1" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2 text-white font-mono focus:ring-2 focus:ring-cyan-500 outline-none" />
+            </div>
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Max Value</label>
+                <input type="number" id="maxVal" value="100" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2 text-white font-mono focus:ring-2 focus:ring-cyan-500 outline-none" />
+            </div>
+        </div>
+        <button id="genBtn" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold rounded-xl transition shadow active:scale-95">
+            Generate Random Number
+        </button>
+        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 text-center">
+            <span class="text-xs text-slate-400">Result</span>
+            <div id="randResult" class="text-5xl font-extrabold text-cyan-400 font-mono my-2">--</div>
+        </div>
+    </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

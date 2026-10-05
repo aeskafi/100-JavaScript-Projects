@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Audio Drum Kit | 100 JavaScript Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+        <div class="flex items-center justify-between mb-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                <span>🥁</span> Web Audio Drum Kit
+            </h1>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-cyan-400 border border-slate-600">
+                Audio & Music
+            </span>
+        </div>
+        <p class="text-sm text-slate-400 mb-6">Synthesized electronic drum pads playable via click or keyboard (A, S, D, F, G, H).</p>
+        
+    <div class="grid grid-cols-3 gap-3">
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="a" data-freq="80">
+            <span class="text-2xl font-black text-cyan-400">A</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Kick</span>
+        </button>
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="s" data-freq="200">
+            <span class="text-2xl font-black text-cyan-400">S</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Snare</span>
+        </button>
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="d" data-freq="400">
+            <span class="text-2xl font-black text-cyan-400">D</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Hi-Hat</span>
+        </button>
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="f" data-freq="130">
+            <span class="text-2xl font-black text-cyan-400">F</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Tom 1</span>
+        </button>
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="g" data-freq="100">
+            <span class="text-2xl font-black text-cyan-400">G</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Tom 2</span>
+        </button>
+        <button class="drum-pad bg-slate-950 hover:bg-cyan-600/30 border-2 border-slate-700 hover:border-cyan-400 p-6 rounded-2xl flex flex-col items-center transition active:scale-95" data-key="h" data-freq="600">
+            <span class="text-2xl font-black text-cyan-400">H</span>
+            <span class="text-xs text-slate-400 mt-1 uppercase font-semibold">Clap</span>
+        </button>
+    </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

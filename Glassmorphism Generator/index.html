@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism UI Generator | 100 JavaScript Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-center items-center p-4 font-sans">
+    <div class="w-full max-w-xl bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 backdrop-blur-md">
+        <a href="../index.html" class="inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+            ← Back to All Projects
+        </a>
+        <div class="flex items-center justify-between mb-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                <span>🪟</span> Glassmorphism UI Generator
+            </h1>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-cyan-400 border border-slate-600">
+                CSS & Design
+            </span>
+        </div>
+        <p class="text-sm text-slate-400 mb-6">Generate frosted glass effects using backdrop-filter and semi-transparent alpha borders.</p>
+        
+    <div class="space-y-4">
+        <div class="relative p-10 rounded-2xl overflow-hidden flex justify-center items-center bg-gradient-to-tr from-cyan-600 to-fuchsia-600">
+            <div id="glassTarget" class="p-6 rounded-2xl border border-white/20 text-center max-w-xs shadow-2xl">
+                <h3 class="text-white font-bold text-sm">Glassmorphic Card</h3>
+                <p class="text-white/80 text-xs mt-1">Frosted translucent background filter.</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs text-slate-300">
+            <div>
+                <label class="block mb-1">Blur: <span id="glassBlurVal">12</span>px</label>
+                <input type="range" id="glassBlur" min="0" max="40" value="12" class="w-full accent-cyan-500" />
+            </div>
+            <div>
+                <label class="block mb-1">Opacity: <span id="glassOpVal">0.2</span></label>
+                <input type="range" id="glassOp" min="0.05" max="0.8" step="0.05" value="0.2" class="w-full accent-cyan-500" />
+            </div>
+        </div>
+        <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1">CSS Rules</label>
+            <textarea id="glassCss" rows="3" readonly class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-cyan-400 font-mono text-xs outline-none resize-none"></textarea>
+        </div>
+    </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
